@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ランダム質問</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+        }
+        #question {
+            font-size: 18px;
+            color: #555;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>知らんボックス</h1>
+    <h4>スキップOKですからね。</h4>
+    <p id="question">質問がここに表示されます。</p>
+    <button onclick="getRandomQuestion()">新しい質問を表示</button>
+
+    <script>
+        const questions = [
+            "生命活動に必要なものを除いて、これがあれば自分は生きていける！というものはありますか？",
+            "人生で食べた中で一番美味しかったものはなんですか。",
+            "あなたの最高の天ぷら・もしくは刺身との思い出を教えてください。",
+            "あなたがよく人から言われる第一印象を教えてください。",
+            "健康・勉強・趣味・お金・目的・遊び・気分・関係性・家族・自己承認・感覚・旅行　この中であなたが今大事にしたいものを2つ選んでください。",
+            "今なら言える、昔ついた嘘について教えてください。",
+            "あなたが覚えている、すごく失敗したかも！と思った事柄の数を教えてください。中身は言わなくても大丈夫です。",
+            "あなたが今一番好きな趣味との出会いについて教えてください。",
+            "あなたの一番得意なことを教えてください。",
+            "あなたが一番苦手だなあと感じていることを教えてください。",
+            "犬派か猫派か議論してください。相手の派閥を変えようとしてください。5分でやめてください。",
+            "今いるメンバーの中で、小学校でやるようなお箸の豆運びが一番上手な人を話し合いで決めてください。",
+            "あなたが一番覚えている、USBメモリとの思い出を教えてください。",
+            "あなたが一番好きなCMを教えてください。",
+            "あなたが一番覚えている、雪との思い出について教えてください。",
+            "あなたが一番覚えている、海との思い出について教えてください。",
+            "１０年後どうなっている自分が思い浮かびますか？教えてください。",
+            "10センチぐらいしかないusbのコードについてどう思いますか？",
+            "一番好きな天気と、一番苦手な天気を教えてください。",
+        ];
+
+        function getRandomQuestion() {
+            const randomIndex = Math.floor(Math.random() * questions.length);
+            document.getElementById('question').textContent = questions[randomIndex];
+        }
+
+    </script>
+</body>
+</html>
